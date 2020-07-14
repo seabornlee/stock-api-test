@@ -12,18 +12,18 @@ pipeline {
     stage('sit 接口测试') {
         when {
             branch 'sit'
-            steps {
-                sh 'mvn test -Dkarate.env=sit'
-            }
+        }
+        steps {
+            sh 'mvn test -Dkarate.env=sit'
         }
     }
 
     stage('uat 接口测试') {
         when {
             branch 'uat'
-            steps {
-                sh 'mvn test -Dkarate.env=uat'
-            }
+        }
+        steps {
+            sh 'mvn test -Dkarate.env=uat'
         }
     }
   }
