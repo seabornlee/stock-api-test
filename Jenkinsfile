@@ -9,21 +9,20 @@ pipeline {
       }
     }
 
-    stage('接口测试') {
+    stage('sit 接口测试') {
         when {
             branch 'sit'
             steps {
                 sh 'mvn test -Dkarate.env=sit'
             }
         }
+    }
 
+    stage('uat 接口测试') {
         when {
-            not {
-                branch 'sit'
-            }
-
+            branch 'uat'
             steps {
-                sh 'mvn test -Dkarate.env=dev'
+                sh 'mvn test -Dkarate.env=uat'
             }
         }
     }
