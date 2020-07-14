@@ -13,7 +13,9 @@ function fn() {
     // customize
     // e.g. config.foo = 'bar';
 	config.baseURL = 'http://localhost'
-  } else if (env == 'e2e') {
+  } else if (env == 'sit') {
+	config.baseURL = 'http://111.231.101.187:5000'
+  } else if (env == 'uat') {
 	config.baseURL = 'http://111.231.101.187:5000'
   }
   return config;
