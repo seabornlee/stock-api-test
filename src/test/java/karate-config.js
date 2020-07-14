@@ -15,8 +15,6 @@ function fn() {
 	config.baseURL = 'http://localhost'
   } else if (env == 'sit') {
 	config.baseURL = 'http://111.231.101.187:5000'
-  } else if (env == 'uat') {
-	config.baseURL = 'http://111.231.101.187:5000'
   }
   return config;
 }

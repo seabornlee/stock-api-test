@@ -16,22 +16,12 @@ pipeline {
         steps {
             sh 'mvn test -Dkarate.env=sit'
         }
-    }
-
-    stage('uat 接口测试') {
-        when {
-            branch 'uat'
-        }
-        steps {
-            sh 'mvn test -Dkarate.env=uat'
+        post {
+            always {
+                junit 'target/surefire-reports/TEST-AllTest.xml'
+            }
         }
     }
-  }
-
-  post {
-      always {
-          junit 'target/surefire-reports/*.xml'
-      }
   }
 }
 
