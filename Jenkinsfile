@@ -14,9 +14,11 @@ pipeline {
     when {
       branch 'sit'
     }
+
     steps {
       sh 'mvn test -Dkarate.env=sit'
     }
+
     post {
       always {
         junit 'target/surefire-reports/TEST-AllTest.xml'
