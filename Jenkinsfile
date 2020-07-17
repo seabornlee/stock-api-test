@@ -12,15 +12,15 @@ pipeline {
 
   stage('sit 接口测试') {
     when {
-        branch 'sit'
+      branch 'sit'
     }
     steps {
-        sh 'mvn test -Dkarate.env=sit'
+      sh 'mvn test -Dkarate.env=sit'
     }
     post {
-        always {
-            junit 'target/surefire-reports/TEST-AllTest.xml'
-        }
+      always {
+        junit 'target/surefire-reports/TEST-AllTest.xml'
+      }
     }
   }
 }
